@@ -9,7 +9,6 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
-        asdasds
     }
     stages {
         stage("First step") {
@@ -17,5 +16,11 @@ pipeline {
                 sh 'ssh root@node \'cd webapp\''
             }
         }
+        stage("Second step") {
+            steps {
+                sh 'ssh root@node \'cd webapp\''
+            }
+        }        
+        
     }
 }
